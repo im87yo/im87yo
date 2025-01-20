@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Counter</title>
+</head>
+<body>
+  <!-- Buttons to control the counter -->
+  <button id="begin">Start Counting</button>
+  <button id="halt">Stop Counting</button>
+
+  <script>
+    // Initialize a variable for the counter
+    let count = 0;
+
+    // This will store the interval reference
+    let timer;
+
+    // Function to handle the counter logic
+    function updateCounter() {
+      count += 1; // Increment the count
+      console.log(count); // Show the count in the console
+    }
+
+    // Function to begin the counter
+    function beginCounting() {
+      // Only start counting if no timer exists
+      if (!timer) {
+        timer = setInterval(updateCounter, 1000); // Call the updateCounter function every second
+      }
+    }
+
+    // Function to stop the counter
+    function stopCounting() {
+      clearInterval(timer); // Stop the interval
+      timer = null; // Reset the timer variable
+    }
+
+    // Find the buttons on the page
+    let startButton = document.querySelector("#begin");
+    let stopButton = document.querySelector("#halt");
+
+    // Attach actions to the buttons
+    startButton.addEventListener("click", beginCounting); // Start the counter when clicked
+    stopButton.addEventListener("click", stopCounting); // Stop the counter when clicked
+  </script>
+</body>
+</html>

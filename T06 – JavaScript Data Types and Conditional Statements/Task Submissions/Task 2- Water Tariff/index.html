@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Bill Calculator</title>
+</head>
+<body>
+    <h1>Water Bill Calculator</h1>
+    <p>Enter the amount of water you used and whether you are an indigent household to calculate your bill.</p>
+
+    <form>
+        <label>Water used (in litres):</label>
+        <input type="number" id="waterInput"><br><br>
+
+        <label>Are you an indigent household?</label><br>
+        <input type="radio" name="indigent" value="yes" id="indigentYes"> Yes<br>
+        <input type="radio" name="indigent" value="no" id="indigentNo"> No<br><br>
+
+        <button type="button" onclick="calculateBill()">Calculate</button>
+    </form>
+
+    <h2 id="output"></h2>
+
+    <script src="waterTariffs.js"></script>
+</body>
+</html>
